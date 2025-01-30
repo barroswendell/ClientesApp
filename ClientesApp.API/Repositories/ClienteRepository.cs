@@ -12,7 +12,7 @@ namespace ClientesApp.API.Repositories
     public class ClienteRepository
     {
         //atributo para armazenar a string de conexão do banco de dados
-        private string _connectionString = "Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=ClientesApp;Integrated Security=True;";
+        private string _connectionString = "Data Source=localhost,1434;Initial Catalog=master;User ID=sa;Password=Coti@2025;Encrypt=False";
 
         /// <summary>
         /// Método para inserir um registro de cliente
@@ -92,7 +92,7 @@ namespace ClientesApp.API.Repositories
                     WHERE
                         ID = @ID
                 ";
-
+                
                 connection.Execute(query, new
                 {
                     @ATIVO = false, //inativar o cliente
